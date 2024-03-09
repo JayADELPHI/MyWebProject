@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Form styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .input-field,
+        .select-field {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            padding: 12px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Additional styling for select fields */
+        .select-field {
+            appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right #fff;
+            background-size: 20px;
+            padding-right: 30px;
+        }
+
+        /* Optional styling for better responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        /* Tabs styling */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #3498db;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tabs a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tabs a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Log-out button styling */
+        .logout-form {
+            margin-top: 20px;
+        }
+
+        .logout-form button {
+            background-color: #e74c3c;
+            color: #fff; 
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .logout-form button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Tabs -->
+<div class="tabs">
+    <!-- User profile -->
+    <a href="/">HomePage</a>
+    <!-- Goals -->
+    <a href="/goals">Goals</a>
+    <!-- Recommendations Tab -->
+    <a href="/recommendations">Recommendations</a>
+    <!--Engagement Tab -->
+    <a href="/Community">Community</a>
+    <!--Settings Tab -->
+    <a href="/settings">Settings</a>
+    <!-- About Us/FAQ Tab-->
+    <a href="/about">About Us/FAQ</a>
+    <!--Contact Tab -->
+    <a href="/contact">Contact</a>
+    <!--log out-->
+    <form action="/logout?_method=DELETE" method="POST" class="logout-form">
+        <button type="submit">Log Out</button>
+    </form>
+</div>
+
+<div class="container">
+    <h1>User Information</h1>
+
+    <form action="/userProfile" method="POST">
+        <div class="form-group">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" class="input-field" required>
+        </div>
+
+        <div class="form-group">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" class="input-field" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" class="input-field" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex" class="select-field" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="goals">Goals:</label>
+            <select id="goals" name="goals" class="select-field" required>
+                <option value="lose">Lose Weight</option>
+                <option value="maintain">Maintain Weight</option>
+                <option value="gain">Gain Weight</option>
+            </select>
+        </div>
+
+        <button type="submit" class="button">Save Profile</button>
+    </form>
+</div>
+
+</body>
+</html>

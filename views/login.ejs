@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Fitness Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+        }
+
+        /* Styles goes here */
+
+        /* Center the login section */
+        .login-section {
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+    <!-- Add your stylesheets and other head elements here -->
+</head>
+<body>
+
+<div class="container">
+    <!-- Personalized Fitness Generator Section -->
+
+    <!-- Login Section -->
+    <div class="login-section">
+        <div class="header">
+            <h1>PFG Login</h1>
+            <% if (messages.error) { %>
+                <%= messages.error %>
+            <% } %>
+            <p>Welcome Back!</p>
+        </div>
+
+        <div class="form-container">
+            <form action="/login" method="POST">
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" placeholder="john.doe@example.com" class="input-field" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="********" class="input-field" required>
+                </div>
+
+                <button type="submit" class="button">Login</button>
+            </form>
+        </div>
+
+        <a href="/register">Register</a>
+<div>
+    <a href="/guest">Guest</a>
+
+</body>
+</html>

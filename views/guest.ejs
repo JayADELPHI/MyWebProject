@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Fitness Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" />
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            text-align: center;
+        }
+
+        /* Your existing styles go here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PFG</h1>
+            <p>Revolutionizing your fitness journey</p>
+        </div>
+
+        <div class="form-container">
+            <form id="fitnessForm">
+                <div class="form-group">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" class="input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="height">Height (cm):</label>
+                    <input type="number" id="height" class="input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" class="input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" class="select-field" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="goal">Goal:</label>
+                    <select id="goal" class="select-field" required>
+                        <option value="maintain">Maintain Weight</option>
+                        <option value="lose">Lose Weight</option>
+                        <option value="gain">Gain Weight</option>
+                    </select>
+                </div>
+
+                <button type="button" class="button" onclick="calculate()">Calculate</button>
+            </form>
+        </div>
+
+        <div class="result-container">
+            <div class="result" id="output">
+                <!-- Display fitness recommendations here with appropriate class names -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const weight = parseInt(document.getElementById('weight').value, 10);
+            const height = parseInt(document.getElementById('height').value, 10);
+            const age = parseInt(document.getElementById('age').value, 10);
+            const gender = document.getElementById('gender').value;
+            const goal = document.getElementById('goal').value;
+
+            // Calculate Basal Metabolic Rate (BMR)
+            let bmr = 0;
+            if (gender === 'female') {
+                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+            } else if (gender === 'male') {
+                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            }
+
+            // Adjust BMR based on goal
+            let calories = 0;
+            if (goal === 'maintain') {
+                calories = bmr * 1.2; // Assuming light activity level
+            } else if (goal === 'lose') {
+                calories = bmr * 1.2 - 500; // Caloric deficit for weight loss
+            } else if (goal === 'gain') {
+                calories = bmr * 1.2 + 500; // Caloric surplus for weight gain
+            }
+
+            // Optimal macronutrient ratios
+            const carbRatio = 0.4;
+            const proteinRatio = 0.3;
+            const fatRatio = 0.3;
+
+            // Calculate macronutrient breakdown
+            const carbs = (calories * carbRatio) / 4; // Carbohydrates in grams
+            const protein = (calories * proteinRatio) / 4; // Protein in grams
+            const fat = (calories * fatRatio) / 9; // Fat in grams
+
+            document.getElementById('output').innerHTML = `
+                <h2>Recommended Daily Intake</h2>
+                <p>Calories: ${Math.round(calories)}</p>
+                <h2>Macronutrient Breakdown</h2>
+                <p>Carbohydrates: ${Math.round(carbs)}g</p>
+                <p>Protein: ${Math.round(protein)}g</p>
+                <p>Fat: ${Math.round(fat)}g</p>
+            `;
+        }
+    </script>
+         <div>
+            <a href="/register">Register</a>
+        <div>
+        </div>
+            <a href="/Login">Login</a>
+        </div>
+        
+        
+        
+</body>
+</html>

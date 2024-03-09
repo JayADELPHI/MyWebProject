@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Fitness Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles/style.css')}}" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PFG registration</h1>
+            <p>Revolutionizing your fitness journey</p>
+        </div>
+
+
+        <div class="form-container">
+            <form action="/calculate" method="post">
+                <div class="form-group">
+                    <label for="height">Height:</label>
+                    <div class="feet-inches">
+                            <input type="number" name="height-feet" placeholder="Feet" class="input-field" required>
+                            <input type="number" name="height-inches" placeholder="Inches" class="input-field" required>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="weight">Weight:</label>
+                    <input type="number" name="weight" class="input-field" required>
+                    <select name="weight-unit" class="select-field" required>
+                        <option value="kg">kg</option>
+                        <option value="pounds">pounds</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" class="input-field" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="goals">Goals:</label>
+                    <select name="goals" class="select-field" required>
+                        <option value="lose">Lose Weight</option>
+                        <option value="maintain">Maintain Weight</option>
+                        <option value="gain">Gain Weight</option>
+                    </select>
+                </div>
+
+
+                <button type="submit" class="button">Calculate</button>
+            </form>
+        </div>
+
+
+        <div class="result-container">
+            <div class="result">
+                <!-- Display fitness recommendations here with appropriate class names -->
+                <!-- For example:
+                <p>Calories: 2000</p>
+                <p>Protein: 100g</p>
+                <p>Carbs: 200g</p>
+                <p>Fat: 50g</p>
+                -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

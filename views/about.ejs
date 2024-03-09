@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Personalized Fitness Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        /* Tabs styling */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #3498db;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tabs a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tabs a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Centered strong tags */
+        strong {
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Log-out button styling */
+        .logout-form {
+            margin-top: 20px;
+        }
+
+        .logout-form button {
+            background-color: #e74c3c;
+            color: #fff; 
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .logout-form button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Tabs -->
+<div class="tabs">
+    <!-- User profile -->
+    <a href="/userProfile">User Profile</a>
+    <!-- Goals -->
+    <a href="/goals">Goals</a>
+    <!-- Recommendations Tab -->
+    <a href="/recommendations">Recommendations</a>
+    <!--Engagement Tab -->
+    <a href="/Community">Community</a>
+    <!--Settings Tab -->
+    <a href="/settings">Settings</a>
+    <!-- About Us/FAQ Tab-->
+    <a href="/">HomePage</a>
+    <!--Contact Tab -->
+    <a href="/contact">Contact</a>
+    <!--log out-->
+    <form action="/logout?_method=DELETE" method="POST" class="logout-form">
+        <button type="submit">Log Out</button>
+    </form>
+</div>
+
+<div class="container">
+    <h1>About Us - Personalized Fitness Generator</h1>
+
+    <p>
+        <strong>Revolutionizing Fitness</strong><br>
+        We're changing the game in fitness by offering a personalized and interactive experience. The Personalized Fitness Generator allows users to create profiles with key info like height, weight, and age, delivering tailored fitness recommendations for goals such as weight loss, maintenance, or gain.
+    </p>
+
+    <p>
+        <strong>Filling the Gap</strong><br>
+        Our mission is to fill the void in the fitness industry for truly personalized and interactive tools. Existing apps provide generic advice; we're addressing this by tailoring recommendations based on individual differences and engaging users visually through an interactive physique animation.
+    </p>
+
+    <p>
+        <strong>Related Works</strong><br>
+        We've analyzed popular fitness apps like MyFitnessPal, Fitbit, StrongLifts 5x5, and Nike Training Club. While they have strengths, we combine these strengths and add a layer of personalization, providing a holistic fitness experience.
+    </p>
+
+    <p>
+        <strong>How We Stand Out</strong><br>
+        The Personalized Fitness Generator offers individualized user profiling, goal-specific recommendations, algorithmic precision in calorie calculations, and personalized macronutrient breakdowns. This creates a powerful tool that goes beyond traditional fitness apps, emphasizing personalization, visualization, and user engagement.
+    </p>
+</div>
+
+</body>
+</html>

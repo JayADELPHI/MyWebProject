@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align at the top */
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin-top: 20px; /* Adjust the top margin as needed */
+            text-align: center;
+        }
+
+        /* Center the form-container in registration section */
+        .form-container {
+            margin: auto;
+        }
+
+        /* Add any additional styling for welcome and registration sections */
+        .welcome-section,
+        .overview-section,
+        .key-features-section,
+        .benefits-section,
+        .header {
+            margin-bottom: 20px; /* Adjust the margin between sections */
+        }
+
+        /* lists */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px; /* Adjust the margin between list items */
+        }
+    </style>
+    <!-- Add your stylesheets and other head elements here -->
+</head>
+<body>
+
+<div class="container">
+    <!-- Welcome Message -->
+    <div class="welcome-section">
+        <h1>Welcome to the Personalized Fitness Generator!</h1>
+        <p>Your journey to a healthier lifestyle begins here. We're excited to help you achieve your fitness goals with our personalized and interactive platform.</p>
+    </div>
+
+    <!-- Overview -->
+    <div class="overview-section">
+        <h2>What We Offer:</h2>
+        <p>Our web application empowers you to take control of your fitness journey by providing tailored recommendations based on your unique profile.</p>
+    </div>
+
+    <!-- Key Features -->
+    <div class="key-features-section">
+        <h2>Key Features:</h2>
+        <ul>
+            <li>Personalized Profiles: Create and manage your fitness profile with essential details like height, weight, and age.</li>
+            <li>Goal Selection: Choose from three distinct goals - Lose Weight, Maintain Weight, or Gain Weight.</li>
+            <li>Fitness Recommendations: Receive personalized recommendations, including daily calorie intake and macronutrient counts aligned with your chosen goal.</li>
+            <li>User Engagement: Stay motivated with features like progress tracking, achievements, and a supportive community.</li>
+        </ul>
+    </div>
+
+    <!-- Benefits -->
+    <div class="benefits-section">
+        <h2>Benefits:</h2>
+        <ul>
+            <li>Customized Guidance: Tailored fitness plans based on your unique profile and goals.</li>
+            <li>Motivational Support: Engage with a community of like-minded individuals, share your progress, and stay inspired.</li>
+            <li>Easy to Use: Our user-friendly interface ensures a seamless experience from profile creation to receiving recommendations.</li>
+            <li>Track Your Progress: Monitor your achievements and visualize your fitness journey with our progress tracking features.</li>
+        </ul>
+    </div>
+
+    <!-- Registration Section -->
+    <div class="header"> 
+        <h1>PFG Registration</h1>
+        <p>Welcome to our community!</p>
+    </div>
+
+    <div class="form-container">
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" placeholder="John" class="input-field" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" placeholder="Doe" class="input-field" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="john.doe@example.com" class="input-field" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="********" class="input-field" required>
+            </div>
+
+            <button type="submit" class="button">Register</button>
+        </form>
+    </div>
+
+</div>
+
+<a href="/login">Login</a>
+
+
+</body>
+</html>
